@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        List<Cliente> listaCliente = new ArrayList<>();
+        ArrayList<Cliente> listaCliente = new ArrayList<>();
         Cliente cliente = new Cliente();
 
         while (true) {
@@ -67,6 +67,7 @@ public class Main {
 
             } else if (opcao.equals("9")) {
                 System.out.println("Lista de Clientes Cadastrados:");
+                //Aqui Ta Errado, não ta rodando todos os cadastrados qualquer coisa so tira.
                 for (Cliente c : listaCliente) {
                     System.out.println(c);
                 }

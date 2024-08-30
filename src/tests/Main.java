@@ -8,14 +8,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         Scanner leitor = new Scanner(System.in);
-        Scanner leitorNum = new Scanner(System.in);
-        List<String> listaCliente = new ArrayList<>();
+        List<Cliente> listaCliente = new ArrayList<>();
         Cliente cliente = new Cliente();
 
-
-        while (true){
+        while (true) {
             System.out.println(
                     """
                    
@@ -36,15 +33,16 @@ public class Main {
             );
             String opcao = leitor.nextLine();
 
-            if (opcao.equals("0")){
+            if (opcao.equals("0")) {
                 System.out.println("Até Breve!");
                 break;
 
             } else if (opcao.equals("1")) {
                 System.out.println("Bem Vindo ao Cadastrar Cliente");
-                cliente.cadastrarCliente(listaCliente);
-                System.out.println("Deseja ver a lista de cadastro");
-
+                cliente.cadastrarCliente();
+                listaCliente.add(cliente);
+                System.out.println(listaCliente);
+                System.out.println("Você está Cadastrado!");
 
             } else if (opcao.equals("2")) {
                 System.out.println("Ver detalhes carro");
@@ -67,14 +65,15 @@ public class Main {
             } else if (opcao.equals("8")) {
                 System.out.println("Resolver Problema");
 
+            } else if (opcao.equals("9")) {
+                System.out.println("Lista de Clientes Cadastrados:");
+                for (Cliente c : listaCliente) {
+                    System.out.println(c);
+                }
+
             } else {
                 System.out.println("Por Favor digite um valor válido!");
             }
-
-
         }
-
-
-
     }
 }

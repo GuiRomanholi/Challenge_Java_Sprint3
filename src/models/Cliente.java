@@ -1,6 +1,5 @@
 package models;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Cliente {
@@ -9,28 +8,24 @@ public class Cliente {
     private String telefone;
     private String email;
 
-
-    public void cadastrarCliente(List<String> listaCliente){
+    public void cadastrarCliente() {
         Scanner leitor = new Scanner(System.in);
         System.out.println("Qual o seu nome: ");
         nome = leitor.nextLine();
         System.out.println("Qual o seu cpf: ");
         cpf = leitor.nextLine();
-        System.out.println("Quakl o seu telefone: ");
+        System.out.println("Qual o seu telefone: ");
         telefone = leitor.nextLine();
         System.out.println("Qual o seu email: ");
         email = leitor.nextLine();
-
-        listaCliente.add(nome);
-        listaCliente.add(cpf);
-        listaCliente.add(telefone);
-        listaCliente.add(email);
-        System.out.println("Você está Cadastrado!");
     }
 
+    @Override
+    public String toString() {
+        return String.format("Nome: %s, CPF: %s, Telefone: %s, Email: %s", nome, cpf, telefone, email);
+    }
 
-
-    //Getters e Setters
+    // Getters e Setters
     public String getNome() {
         return nome;
     }

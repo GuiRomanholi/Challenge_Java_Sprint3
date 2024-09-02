@@ -20,8 +20,6 @@ public class Carro {
         modelo = leitor.nextLine();
     }
 
-
-
     @Override
     public String toString() {
         return String.format("Cor: %s, Placa: %s, Marca: %s, Modelo: %s", cor, placa, marca, modelo);

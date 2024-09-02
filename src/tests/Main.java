@@ -2,6 +2,7 @@ package tests;
 
 import models.Carro;
 import models.Cliente;
+import models.Guincho;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +57,11 @@ public class Main {
 
             } else if (opcao.equals("3")) {
                 System.out.println("Chamar guincho");
+                Guincho guincho = new Guincho();
+                guincho.setMarca("Ford");
+                guincho.setPlaca("3FGU76");
+                guincho.setAno_fabricacao("2000");
+                guincho.acionarGuincho();
 
             } else if (opcao.equals("4")) {
                 System.out.println("Ver detalhe endereço");

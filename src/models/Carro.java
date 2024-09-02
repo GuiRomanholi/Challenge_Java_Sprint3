@@ -1,12 +1,31 @@
 package models;
 
+import java.util.Scanner;
+
 public class Carro {
-    private String cor;
-    protected String placa;
+    protected String cor;
+    private String placa;
     protected String marca;
     protected String modelo;
 
+    public void cadastrarCarro(){
+        Scanner leitor = new Scanner(System.in);
+        System.out.println("Qual a cor: ");
+        cor = leitor.nextLine();
+        System.out.println("Qual a placa: ");
+        placa = leitor.nextLine();
+        System.out.println("Qual a marca: ");
+        marca = leitor.nextLine();
+        System.out.println("Qual o modelo: ");
+        modelo = leitor.nextLine();
+    }
 
+
+
+    @Override
+    public String toString() {
+        return String.format("Cor: %s, Placa: %s, Marca: %s, Modelo: %s", cor, placa, marca, modelo);
+    }
 
     //Getters e Setters
     public String getCor() {

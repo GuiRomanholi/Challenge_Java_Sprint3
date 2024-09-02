@@ -1,6 +1,6 @@
 package models;
 
-public class Diagnostico {
+public class Diagnostico extends Pedido{
 
     private String descricaoSintoma;
 

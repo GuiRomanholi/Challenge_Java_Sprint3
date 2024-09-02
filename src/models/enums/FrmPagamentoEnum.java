@@ -1,6 +1,6 @@
 package models.enums;
 
-public enum FrmPagamento {
+public enum FrmPagamentoEnum {
     PIX,
     C_CREDITO,
     C_DEBITO

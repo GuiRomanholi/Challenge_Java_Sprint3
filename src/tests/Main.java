@@ -10,7 +10,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         ArrayList<Cliente> listaCliente = new ArrayList<>();
-        Cliente cliente = new Cliente();
 
         while (true) {
             System.out.println(
@@ -27,6 +26,7 @@ public class Main {
                    | 6 - Forma de Pagamento                |
                    | 7 - Ver Oficina Direcionada           |
                    | 8 - Resolver Problema                 |
+                   | 9 - Lista de Clientes Cadastrados     |
                    | 0 - Sair                              |
                    |=======================================|
                    Digite a opção desejada:\s"""
@@ -39,9 +39,9 @@ public class Main {
 
             } else if (opcao.equals("1")) {
                 System.out.println("Bem Vindo ao Cadastrar Cliente");
+                Cliente cliente = new Cliente(); // Cria uma nova instância de Cliente
                 cliente.cadastrarCliente();
                 listaCliente.add(cliente);
-                System.out.println(listaCliente);
                 System.out.println("Você está Cadastrado!");
 
             } else if (opcao.equals("2")) {
@@ -67,7 +67,6 @@ public class Main {
 
             } else if (opcao.equals("9")) {
                 System.out.println("Lista de Clientes Cadastrados:");
-                //Aqui Ta Errado, não ta rodando todos os cadastrados qualquer coisa so tira.
                 for (Cliente c : listaCliente) {
                     System.out.println(c);
                 }

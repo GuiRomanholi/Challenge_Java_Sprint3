@@ -6,6 +6,11 @@ public class Endereco {
     private String numero;
     private String estado;
 
+    public String exibirEndereco(){
+        return "O guincho vai ir a oficina que está localizada no estado de " + this.estado +
+                "\nNa cidade de " + this.cidade + " do cep " + this.cep +
+                "com o número " + this.numero;
+    }
 
 
     //Getters e Setters

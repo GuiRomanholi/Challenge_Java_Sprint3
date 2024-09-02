@@ -2,6 +2,7 @@ package tests;
 
 import models.Carro;
 import models.Cliente;
+import models.Endereco;
 import models.Guincho;
 
 import java.util.ArrayList;
@@ -15,10 +16,10 @@ public class Main {
         ArrayList<Cliente> listaCliente = new ArrayList<>();
         ArrayList<Carro> listaCarro = new ArrayList<>();
 
+
         while (true) {
             System.out.println(
                     """
-                   
                    |=======================================|
                    |      M E N U - P R I N C I P A L      |
                    |=======================================|
@@ -61,10 +62,24 @@ public class Main {
                 guincho.setMarca("Ford");
                 guincho.setPlaca("3FGU76");
                 guincho.setAno_fabricacao("2000");
-                guincho.acionarGuincho();
+                boolean endereco_guin = guincho.acionarGuincho();
+
+                if (endereco_guin == true){
+                    //Não sei se posso fazer isso
+                    Endereco endereco = new Endereco();
+                    endereco.setCep("08005-078");
+                    endereco.setCidade("São Paulo");
+                    endereco.setNumero("821");
+                    endereco.setEstado("São Paulo");
+                    System.out.println(endereco.exibirEndereco());
+                    System.out.println("De Enter para continuar");
+                    leitor.nextLine();
+                }else {
+                    System.out.println("Retornando ao Menu Principal...");
+                }
 
             } else if (opcao.equals("4")) {
-                System.out.println("Ver detalhe endereço");
+                System.out.println("Ver detalhes endereço");
 
             } else if (opcao.equals("5")) {
                 System.out.println("Dados pedido");

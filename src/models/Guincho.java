@@ -12,7 +12,7 @@ public class Guincho extends Carro{
                 ", cuidado para não se confundir!";
     }
 
-    public void acionarGuincho(){
+    public Boolean acionarGuincho(){
         Scanner leitor = new Scanner(System.in);
         while (true){
             System.out.println("Deseja Chamar o Guincho? 1 = Sim / 2 = Não");
@@ -22,13 +22,11 @@ public class Guincho extends Carro{
                 System.out.println(exibirDetalhes());
                 System.out.println("De Enter para continuar");
                 leitor.nextLine();
-
-                break;
+                return true;
             } else if (opcao.equals("2")) {
-                System.out.println("Retornando ao Menu Principal...");
                 System.out.println("De Enter para continuar");
                 leitor.nextLine();
-                break;
+                return false;
             }else {
                 System.out.println("Por Favor Digie um valor válido!");
                 System.out.println("De Enter para continuar");

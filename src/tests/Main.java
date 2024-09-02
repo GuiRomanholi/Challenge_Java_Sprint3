@@ -26,12 +26,11 @@ public class Main {
                    | 1 - Cadastrar Cliente                 |
                    | 2 - Cadastro Carro                    |
                    | 3 - Chamar Guincho                    |
-                   | 4 - Ver Detalhes Endereço             |
-                   | 5 - Dados do Pedido                   |
-                   | 6 - Forma de Pagamento                |
-                   | 7 - Ver Oficina Direcionada           |
-                   | 8 - Resolver Problema                 |
-                   | 9 - Listar                            |
+                   | 4 - Dados do Pedido                   |
+                   | 5 - Forma de Pagamento                |
+                   | 6 - Ver Oficina Direcionada           |
+                   | 7 - Resolver Problema                 |
+                   | 8 - Listar                            |
                    | 0 - Sair                              |
                    |=======================================|
                    Digite a opção desejada:\s"""
@@ -79,21 +78,18 @@ public class Main {
                 }
 
             } else if (opcao.equals("4")) {
-                System.out.println("Ver detalhes endereço");
-
-            } else if (opcao.equals("5")) {
                 System.out.println("Dados pedido");
 
-            } else if (opcao.equals("6")) {
+            } else if (opcao.equals("5")) {
                 System.out.println("Forma Pagamento");
 
-            } else if (opcao.equals("7")) {
+            } else if (opcao.equals("6")) {
                 System.out.println("Ver oficina direcionada");
 
-            } else if (opcao.equals("8")) {
+            } else if (opcao.equals("7")) {
                 System.out.println("Resolver Problema");
 
-            } else if (opcao.equals("9")) {
+            } else if (opcao.equals("8")) {
                 while (true){
                     System.out.println("""
                         Listar:

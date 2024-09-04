@@ -1,9 +1,6 @@
 package tests;
 
-import models.Carro;
-import models.Cliente;
-import models.Endereco;
-import models.Guincho;
+import models.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +61,6 @@ public class Main {
                 boolean endereco_guin = guincho.acionarGuincho();
 
                 if (endereco_guin == true){
-                    //Não sei se posso fazer isso
                     Endereco endereco = new Endereco();
                     endereco.setCep("08005-078");
                     endereco.setCidade("São Paulo");
@@ -88,6 +84,8 @@ public class Main {
 
             } else if (opcao.equals("7")) {
                 System.out.println("Resolver Problema");
+                Diagnostico diagnostico = new Diagnostico();
+                diagnostico.exibirDiagnostico();
 
             } else if (opcao.equals("8")) {
                 while (true){

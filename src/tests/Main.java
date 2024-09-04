@@ -77,22 +77,18 @@ public class Main {
             } else if (opcao.equals("4")) {
                 System.out.println("Dados do Pedido");
                 Pedido pedido = new Pedido();
+                LocalTime hora = LocalTime.now();
+                LocalDate data = LocalDate.now();
 
-                pedido.setHora(LocalTime.now());
-                pedido.setData(LocalDate.now());
+                DateTimeFormatter horaFormatar = DateTimeFormatter.ofPattern("HH:mm");
+                String formatadoHora = hora.format(horaFormatar);
 
-                DateTimeFormatter formatterData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
-
-
-                String dataFormatada = pedido.getData().format(formatterData);
-                String horaFormatada = pedido.getHora().format(formatterHora);
-
+                DateTimeFormatter dataFormatar = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                String formatadoData = data.format(dataFormatar);
                 pedido.setValor(60);
                 pedido.setNumero("1");
-
-                System.out.println("Data do Pedido: " + dataFormatada);
-                System.out.println("Hora do Pedido: " + horaFormatada);
+                pedido.setData(formatadoData);
+                pedido.setHora(formatadoHora);
                 pedido.dadosPedido();
 
             } else if (opcao.equals("5")) {

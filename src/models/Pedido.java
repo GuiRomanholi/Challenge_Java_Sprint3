@@ -1,14 +1,11 @@
 package models;
 
 import models.enums.FrmPagamentoEnum;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Pedido {
-    private LocalTime hora;
-    private LocalDate data;
+    private String hora;
+    private String data;
     private String numero;
     private double valor;
 
@@ -28,7 +25,7 @@ public class Pedido {
     }
 
     public void dadosPedido() {
-        System.out.println("O seu pedido de número " + this.numero +
+        System.out.println("O pedido de número " + this.numero +
                 " foi registrado, seu pedido foi feito às " + this.hora +
                 " no dia " + this.data);
     }
@@ -66,19 +63,20 @@ public class Pedido {
 
     // Getters e Setters
 
-    public LocalTime getHora() {
+
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
-    public LocalDate getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(String data) {
         this.data = data;
     }
 

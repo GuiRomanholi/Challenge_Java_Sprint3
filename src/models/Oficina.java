@@ -6,7 +6,10 @@ public class Oficina {
     private String razao_social;
     private String contato;
 
-
+    public String oficinaRecebeuCarro(){
+        return "A oficina " + this.nome + " estará com seu veículo" +
+                "\nE para caso precise aqui está o contato: " + this.contato;
+    }
 
     //Getters e Setters
 

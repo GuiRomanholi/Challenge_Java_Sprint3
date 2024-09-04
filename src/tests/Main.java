@@ -93,6 +93,12 @@ public class Main {
 
             } else if (opcao.equals("5")) {
                 System.out.println("Ver oficina direcionada");
+                Oficina oficina = new Oficina();
+                oficina.setCnpj("12.345.678/0001-95");
+                oficina.setNome("Paulo Concertos");
+                oficina.setRazao_social("Of de Claud.");
+                oficina.setContato("(11) 96846-4922");
+                System.out.println(oficina.oficinaRecebeuCarro());
 
             } else if (opcao.equals("6")) {
                 System.out.println("Resolver Problema");

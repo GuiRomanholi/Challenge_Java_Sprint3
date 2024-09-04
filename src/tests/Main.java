@@ -2,17 +2,17 @@ package tests;
 
 import models.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        Scanner leitorNum = new Scanner(System.in);
         ArrayList<Cliente> listaCliente = new ArrayList<>();
         ArrayList<Carro> listaCarro = new ArrayList<>();
-
 
         while (true) {
             System.out.println(
@@ -60,24 +60,43 @@ public class Main {
                 guincho.setAno_fabricacao("2000");
                 boolean endereco_guin = guincho.acionarGuincho();
 
-                if (endereco_guin == true){
+                if (endereco_guin) {
                     Endereco endereco = new Endereco();
                     endereco.setCep("08005-078");
                     endereco.setCidade("São Paulo");
                     endereco.setNumero("821");
                     endereco.setEstado("São Paulo");
                     System.out.println(endereco.exibirEndereco());
-                    System.out.println("De Enter para continuar");
+                    System.out.println("Pressione Enter para continuar");
                     leitor.nextLine();
-                }else {
+
+                } else {
                     System.out.println("Retornando ao Menu Principal...");
                 }
 
             } else if (opcao.equals("4")) {
-                System.out.println("Dados pedido");
+                System.out.println("Dados do Pedido");
+                Pedido pedido = new Pedido();
+
+                pedido.setHora(LocalTime.now());
+                pedido.setData(LocalDate.now());
+
+                DateTimeFormatter formatterData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
+
+
+                String dataFormatada = pedido.getData().format(formatterData);
+                String horaFormatada = pedido.getHora().format(formatterHora);
+
+                pedido.setValor(60);
+                pedido.setNumero("1");
+
+                System.out.println("Data do Pedido: " + dataFormatada);
+                System.out.println("Hora do Pedido: " + horaFormatada);
+                pedido.dadosPedido();
 
             } else if (opcao.equals("5")) {
-                System.out.println("Forma Pagamento");
+                System.out.println("Forma de Pagamento");
 
             } else if (opcao.equals("6")) {
                 System.out.println("Ver oficina direcionada");
@@ -88,7 +107,7 @@ public class Main {
                 diagnostico.exibirDiagnostico();
 
             } else if (opcao.equals("8")) {
-                while (true){
+                while (true) {
                     System.out.println("""
                         Listar:
                         1 - Clientes
@@ -97,33 +116,33 @@ public class Main {
                         Digite a opção desejada:
                         """);
                     String desejo = leitor.nextLine();
-                    if (desejo.equals("1")){
+                    if (desejo.equals("1")) {
                         for (Cliente c : listaCliente) {
                             System.out.println(c);
                             System.out.println("--------------------------------------------");
                         }
-                        System.out.println("De Enter para Continuar");
+                        System.out.println("Pressione Enter para Continuar");
                         leitor.nextLine();
                     } else if (desejo.equals("2")) {
                         for (Carro c : listaCarro) {
                             System.out.println(c);
                             System.out.println("--------------------------------------------");
                         }
-                        System.out.println("De Enter para Continuar");
+                        System.out.println("Pressione Enter para Continuar");
                         leitor.nextLine();
                     } else if (desejo.equals("0")) {
                         System.out.println("Retornando...");
                         break;
                     } else {
                         System.out.println("Por Favor digite uma opção válida");
-                        System.out.println("De Enter para Continuar");
+                        System.out.println("Pressione Enter para Continuar");
                         leitor.nextLine();
                     }
                 }
 
             } else {
                 System.out.println("Por Favor digite um valor válido!");
-                System.out.println("De Enter para Continuar");
+                System.out.println("Pressione Enter para Continuar");
                 leitor.nextLine();
             }
         }

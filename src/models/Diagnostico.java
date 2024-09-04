@@ -61,7 +61,7 @@ public class Diagnostico extends Pedido{
                         "\nVerifique o nível de fluido de transmissão e procure sinais de vazamento." +
                         "\nSe persistir, consulte um mecânico qualificado para diagnosticar e reparar o câmbio.");
             } else if (opcao.equals("0")) {
-                System.out.println("Voltando");
+                System.out.println("Voltando...");
                 break;
             } else {
                 System.out.println("Por Favor digite o respectivo número");

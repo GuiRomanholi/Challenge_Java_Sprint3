@@ -23,11 +23,10 @@ public class Main {
                    | 1 - Cadastrar Cliente                 |
                    | 2 - Cadastro Carro                    |
                    | 3 - Chamar Guincho                    |
-                   | 4 - Dados do Pedido                   |
-                   | 5 - Forma de Pagamento                |
-                   | 6 - Ver Oficina Direcionada           |
-                   | 7 - Resolver Problema                 |
-                   | 8 - Listar                            |
+                   | 4 - Dados e Pagamento                 |
+                   | 5 - Ver Oficina Direcionada           |
+                   | 6 - Resolver Problema                 |
+                   | 7 - Listar                            |
                    | 0 - Sair                              |
                    |=======================================|
                    Digite a opção desejada:\s"""
@@ -90,19 +89,17 @@ public class Main {
                 pedido.setData(formatadoData);
                 pedido.setHora(formatadoHora);
                 pedido.dadosPedido();
+                pedido.escolherForma();
 
             } else if (opcao.equals("5")) {
-                System.out.println("Forma de Pagamento");
-
-            } else if (opcao.equals("6")) {
                 System.out.println("Ver oficina direcionada");
 
-            } else if (opcao.equals("7")) {
+            } else if (opcao.equals("6")) {
                 System.out.println("Resolver Problema");
                 Diagnostico diagnostico = new Diagnostico();
                 diagnostico.exibirDiagnostico();
 
-            } else if (opcao.equals("8")) {
+            } else if (opcao.equals("7")) {
                 while (true) {
                     System.out.println("""
                         Listar:

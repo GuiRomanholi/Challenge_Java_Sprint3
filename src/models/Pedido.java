@@ -14,14 +14,19 @@ public class Pedido {
         System.out.println("O valor atual é de " + getValor());
         System.out.println("Deseja um desconto? 1 = Sim / 2 = Não");
         String opcao = leitor.nextLine();
-        if (opcao.equals("1")) {
-            double desconto = 10;
-            this.valor = valor - desconto;
-        } else if (opcao.equals("2")) {
-            System.out.println("Muito Bem!");
-            this.valor = valor;
+        while (true){
+            if (opcao.equals("1")) {
+                double desconto = 10;
+                this.valor = valor - desconto;
+                System.out.println("Desconto gerado, valor atual de " + this.valor);
+                return valor;
+            } else if (opcao.equals("2")) {
+                System.out.println("Muito Bem!");
+                return valor;
+            }else {
+                System.out.println("Por Favor Digite um valor válido!");
+            }
         }
-        return valor;
     }
 
     public void dadosPedido() {
@@ -33,7 +38,8 @@ public class Pedido {
     public void escolherForma() {
         Scanner leitor = new Scanner(System.in);
         while (true) {
-            System.out.println("Escolha uma das opções de pagamento pelo número entre ()");
+            fazerDesconto();
+            System.out.println("Escolha uma das opções de pagamento pelo número");
             System.out.println("1 - Pix\n2 - Cartão de Débito\n3 - Cartão de Crédito\n0 - Sair");
             String opcao = leitor.nextLine();
             FrmPagamentoEnum pagamento = null;

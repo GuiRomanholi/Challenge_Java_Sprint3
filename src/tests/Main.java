@@ -1,5 +1,6 @@
 package tests;
 
+import dao.ClienteDao;
 import models.*;
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ public class Main {
         Scanner leitor = new Scanner(System.in);
         ArrayList<Cliente> listaCliente = new ArrayList<>();
         ArrayList<Carro> listaCarro = new ArrayList<>();
+        ClienteDao dao = new ClienteDao();
 
         while (true) {
             System.out.println(
@@ -41,6 +43,8 @@ public class Main {
                 System.out.println("Bem Vindo ao Cadastrar Cliente");
                 Cliente cliente = new Cliente();
                 cliente.cadastrarCliente();
+                dao.cadastrarCliente(cliente);
+                System.out.println("Contato adicionado no banco com sucesso");
                 listaCliente.add(cliente);
                 System.out.println("Você está Cadastrado!");
 

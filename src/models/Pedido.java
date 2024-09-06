@@ -1,6 +1,6 @@
 package models;
 
-import models.enums.FrmPagamentoEnum;
+import enums.FrmPagamentoEnum;
 import java.util.Scanner;
 
 public class Pedido {

@@ -1,5 +1,6 @@
 package tests;
 
+import dao.CarroDao;
 import dao.ClienteDao;
 import models.*;
 
@@ -15,6 +16,7 @@ public class Main {
         ArrayList<Cliente> listaCliente = new ArrayList<>();
         ArrayList<Carro> listaCarro = new ArrayList<>();
         ClienteDao dao = new ClienteDao();
+        CarroDao carroDao = new CarroDao();
 
         while (true) {
             System.out.println(
@@ -44,7 +46,6 @@ public class Main {
                 Cliente cliente = new Cliente();
                 cliente.cadastrarCliente();
                 dao.cadastrarCliente(cliente);
-                System.out.println("Contato adicionado no banco com sucesso");
                 listaCliente.add(cliente);
                 System.out.println("Você está Cadastrado!");
 
@@ -52,6 +53,7 @@ public class Main {
                 System.out.println("Cadastro carro");
                 Carro carro = new Carro();
                 carro.cadastrarCarro();
+                carroDao.cadastrarCarro(carro);
                 listaCarro.add(carro);
                 System.out.println("Seu carro está cadastrado!");
 

@@ -1,10 +1,15 @@
 package dao;
 
+import enums.CorEnum;
+import models.Carro;
 import models.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClienteDao {
 
@@ -26,5 +31,27 @@ public class ClienteDao {
         }catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public List<Cliente> buscarTodosClientes(){
+        List<Cliente> clientes = new ArrayList<>();
+        PreparedStatement comandoSql = null;
+        conexao = ConnectionFactory.obterConexao();
+        try{
+            comandoSql = conexao.prepareStatement("Select * from tbl_cliente ");
+            ResultSet rs = comandoSql.executeQuery();
+            while(rs.next()){
+                Cliente cliente = new Cliente();
+                cliente.setCpf(rs.getString(1));
+                cliente.setNome(rs.getString(2));
+                cliente.setEmail(rs.getString(3));
+                cliente.setTelefone(rs.getString(4));
+
+                clientes.add(cliente);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return clientes;
     }
 }

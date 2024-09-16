@@ -8,13 +8,12 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        ArrayList<Cliente> listaCliente = new ArrayList<>();
-        ArrayList<Carro> listaCarro = new ArrayList<>();
         ClienteDao dao = new ClienteDao();
         CarroDao carroDao = new CarroDao();
 
@@ -46,7 +45,6 @@ public class Main {
                 Cliente cliente = new Cliente();
                 cliente.cadastrarCliente();
                 dao.cadastrarCliente(cliente);
-                listaCliente.add(cliente);
                 System.out.println("Você está Cadastrado!");
 
             } else if (opcao.equals("2")) {
@@ -54,7 +52,6 @@ public class Main {
                 Carro carro = new Carro();
                 carro.cadastrarCarro();
                 carroDao.cadastrarCarro(carro);
-                listaCarro.add(carro);
                 System.out.println("Seu carro está cadastrado!");
 
             } else if (opcao.equals("3")) {
@@ -122,6 +119,7 @@ public class Main {
                         """);
                     String desejo = leitor.nextLine();
                     if (desejo.equals("1")) {
+                        List<Cliente> listaCliente = dao.buscarTodosClientes();
                         for (Cliente c : listaCliente) {
                             System.out.println(c);
                             System.out.println("--------------------------------------------");
@@ -129,6 +127,7 @@ public class Main {
                         System.out.println("Pressione Enter para Continuar");
                         leitor.nextLine();
                     } else if (desejo.equals("2")) {
+                        List<Carro> listaCarro = carroDao.buscarTodosCarro();
                         for (Carro c : listaCarro) {
                             System.out.println(c);
                             System.out.println("--------------------------------------------");
